@@ -8,7 +8,7 @@ This project is an example of an API developed in .NET6
 ASP.NET Web API is a framework for building HTTP services that can be accessed from any client including browsers and mobile devices. It is an ideal platform for building RESTful applications on the . NET Framework.
 
 ## DSF Components  
-Generally, DSF-Ready Services are composed of a Web application (including the DSF Design System and CyLogin integration) and a RESTful API that gets and posts data to the Back-end system(s).  The connectivity from the service (which is on the cloud) to the API is implemented through an API Gateway.
+Generally, DSF-Ready Services are composed of a Web application (including the DSF Design System and CyLogin integration) and a RESTful API that gets data from and posts data to the Back-end system(s).  The connectivity from the service (which is on the cloud) to the API is implemented through an API Gateway.
 
 ![alt text](https://github.com/gov-cy/govdesign/blob/main/dsf-service-diagram.png)
 
