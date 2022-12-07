@@ -8,7 +8,7 @@ This project is an example of an API developed in .NET6
 ASP.NET Web API is a framework for building HTTP services that can be accessed from any client including browsers and mobile devices. It is an ideal platform for building RESTful applications on the . NET Framework.
 
 ## DSF Components
-![alt text](https://github.com/gov-cy/govdesign/blob/main/dsf-components-2.png)
+![alt text](https://github.com/gov-cy/govdesign/blob/main/dsf-service-diagram.png)
 
 ### DSF templates to serve as a quickstart guide for developing DSF-ready services:
 - **RESTful API**: This repository provides a template project for developing a RESTful API [git-api-template]
