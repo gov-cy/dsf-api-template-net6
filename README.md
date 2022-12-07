@@ -23,7 +23,7 @@ This api is a demo implementation that contains the following:
 * A proposed project structure for RESTful API development based on DSF API Standards [dsf-api-standard]
 * API Key handling and validation in configuration (No DB required)
 * Implementation of GET, POST, PUT, and DELETE endpoints for demostrating CRUD operations using temporary In-Memory storage.
-* A sample phone number validation endpoint (Validation Controller)
+* Sample email and phone number validation endpoints (Validation Controller)
 * Implementation of a sample endpoint to return the claims of an IdentityServer access token (Identity Controller)
 * much more to come ...
 
