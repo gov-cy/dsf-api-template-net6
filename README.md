@@ -2,7 +2,7 @@
  
 # DSF API Template
 ## A quickstart template for creating a RESTful API based on the DSF API standards
-This project is an example of an API developed in .NET6
+This project is an example of an API developed in .NET6. A demo installations is available at: [api-template-demo].
 
 ## ASP.NET Web API
 ASP.NET Web API is a framework for building HTTP services that can be accessed from any client including browsers and mobile devices. It is an ideal platform for building RESTful applications on the . NET Framework.
@@ -158,6 +158,7 @@ MIT
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job.)
    
    [git-api-template]: <https://github.com/gov-cy/dsf-api-template-net6.git>
+   [api-template-demo]: <https://dsf-api-test.dmrid.gov.cy/swagger/index.html>
    [git-service-template]: <https://github.com/gov-cy/dsf-service-template-net6>
    [git-design-system]: <https://github.com/gov-cy/govcy-design-system>
    [git-design-system-docs]: <https://gov-cy.github.io/govcy-design-system-docs/>
