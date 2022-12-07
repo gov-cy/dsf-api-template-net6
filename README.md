@@ -149,7 +149,7 @@ The client-key, is the value (not key) that is being sent in the request headers
 
 ## License
 
-MIT [mit-license]
+[MIT License]
 
 **Free Software, Hell Yeah!**
 
@@ -166,4 +166,4 @@ MIT [mit-license]
    [dsf-idsrv-dev]: <https://dsf-idsrv-dev.dmrid.gov.cy>
    [dsf-api-standard]: <https://dsf.dmrid.gov.cy/2022/05/17/technical-policy/>   
    [http-status-codes]: <https://learn.microsoft.com/en-us/dotnet/api/system.net.httpstatuscode?view=net-7.0>
-   [mit-license]: <https://github.com/gov-cy/dsf-api-template-net6/blob/master/LICENSE.md>
+   [MIT License]: <https://github.com/gov-cy/dsf-api-template-net6/blob/master/LICENSE.md>
