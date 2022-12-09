@@ -221,7 +221,7 @@ namespace dsf_api_template_net6.Controllers
         }
 
         /// <summary>
-        /// POST Method [Authorize]
+        /// DELETE Method [Authorize]
         /// </summary>                
         /// <remarks>
         /// The DELETE method deletes the specified resource.
@@ -265,9 +265,9 @@ namespace dsf_api_template_net6.Controllers
             return response;
         }
 
-        private bool TodoItemExists(long id)
-        {
-            return _context.TodoItems.Any(e => e.Id == id);
-        }
+        //private bool TodoItemExists(long id)
+        //{
+        //    return _context.TodoItems.Any(e => e.Id == id);
+        //}
     }
 }

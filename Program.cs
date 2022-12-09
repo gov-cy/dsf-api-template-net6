@@ -12,8 +12,13 @@ using System.Net;
 
 var builder = WebApplication.CreateBuilder(args);
 
+//Use ToDoItems In Memory Database Context
 builder.Services.AddDbContext<TodoContext>(opt =>
-    opt?.UseInMemoryDatabase("TodoList"));
+    opt?.UseInMemoryDatabase("TodoListDb"));
+
+//Use Contact Info In Memory Database Context
+builder.Services.AddDbContext<ContactInfoContext>(opt =>
+    opt?.UseInMemoryDatabase("ContactInfoDb"));
 
 
 builder.Services.AddSwaggerGen(c =>
