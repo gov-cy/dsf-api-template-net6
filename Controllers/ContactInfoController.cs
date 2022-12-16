@@ -167,7 +167,7 @@ namespace dsf_api_template_net6.Controllers
                 response.ErrorCode = StatusCodes.Status500InternalServerError;
                 response.ErrorMessage = ex.ToString();
 
-                _logger.LogError("ContactInfoController - PostContactInfo(TodoItem todoItem): " + ex.ToString());
+                _logger.LogError("ContactInfoController - PostContactInfo(ContactInfo contactInfo): " + ex.ToString());
             }
 
             return response;
