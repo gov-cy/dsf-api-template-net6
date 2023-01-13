@@ -35,7 +35,7 @@ builder.Services.AddSwaggerGen(c =>
             Url = new Uri("https://dsf.dmrid.gov.cy/")
         },
     });
-
+    //todo: enable annotations
     c.OperationFilter<AddHeaderParameterOperationFilter>();
     //c.OperationFilter<SecurityRequirementsOperationFilter>();
     //c.SchemaFilter<EnumSchemaFilter>();

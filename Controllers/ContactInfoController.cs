@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Swashbuckle.AspNetCore.Annotations;
 using System.Security.Claims;
 using System.Security.Principal;
 
@@ -37,6 +38,16 @@ namespace dsf_api_template_net6.Controllers
         /// </remarks>
         [Authorize]
         [HttpGet]
+        [SwaggerOperation(
+            Summary = "GetContactInfo",
+            Description = "Gets contract's info",
+            OperationId = "ContactInfo.Get",
+            Tags = new[] { "ProjectEndpoints"})
+        ]
+        [Produces("application/json")]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<BaseResponse<ContactInfo>> GetContactInfo()
         {
             var response = new BaseResponse<ContactInfo>
