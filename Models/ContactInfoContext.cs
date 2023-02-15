@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System.Security.Cryptography.Pkcs;
 
-namespace dsf_api_template_net6.Models
+namespace DSF.AspNetCore.Api.Template.Models
 {
     public class ContactInfoContext : DbContext
     {

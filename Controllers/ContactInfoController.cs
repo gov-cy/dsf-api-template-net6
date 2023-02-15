@@ -1,13 +1,11 @@
-﻿using dsf_api_template_net6.Models;
-using Microsoft.AspNetCore.Authentication;
+﻿using DSF.AspNetCore.Api.Template.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Swashbuckle.AspNetCore.Annotations;
 using System.Security.Claims;
-using System.Security.Principal;
 
-namespace dsf_api_template_net6.Controllers
+namespace DSF.AspNetCore.Api.Template.Controllers
 {
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiVersion("1.0")]

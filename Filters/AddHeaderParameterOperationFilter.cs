@@ -1,7 +1,7 @@
 ﻿using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace dsf_api_template_net6.Filters
+namespace DSF.AspNetCore.Api.Template.Filters
 {
     /// <summary>
     /// Header

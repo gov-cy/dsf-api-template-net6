@@ -2,7 +2,7 @@
 using System.Text.RegularExpressions;
 using System;
 
-namespace dsf_api_template_net6.Helpers
+namespace DSF.AspNetCore.Api.Template.Helpers
 {
     public static class EmailValidator
     {

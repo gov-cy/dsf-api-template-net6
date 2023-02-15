@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "dsf_api_template_net6": {
+    "DSF.AspNetCore.Api.Template": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

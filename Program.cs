@@ -1,13 +1,12 @@
 using AspNetCoreRateLimit;
-using dsf_api_template_net6.Filters;
-using dsf_api_template_net6.Middleware;
+using DSF.AspNetCore.Api.Template.Filters;
+using DSF.AspNetCore.Api.Template.Middleware;
+using DSF.AspNetCore.Api.Template.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.OpenApi.Models;
-using System.Reflection;
-
 using Microsoft.EntityFrameworkCore;
-using dsf_api_template_net6.Models;
+using Microsoft.OpenApi.Models;
 using System.Net;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
