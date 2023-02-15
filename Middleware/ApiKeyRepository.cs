@@ -49,15 +49,6 @@ namespace dsf_api_template_net6.Middleware
             }
 
             return false;
-
-            //if (apikeyAuthList.Contains(endpoint) || apikeyAuthList.Contains("*"))
-            //{
-            //    return true;
-            //}
-            //else
-            //{
-            //    return false;
-            //}
         }
 
         public bool CheckRestrictedApiKey(string reqkey)

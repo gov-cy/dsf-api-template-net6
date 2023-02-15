@@ -18,8 +18,8 @@ namespace dsf_api_template_net6.Controllers
             _logger = logger;
         }
 
-        /// <summary>
-        /// This action simply echoes the identity claims back to the client
+        /// <summary> 
+        /// This action simply echoes the identity claims back to the client [Authorize]
         /// </summary>
 
         [Authorize]

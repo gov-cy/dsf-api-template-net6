@@ -34,7 +34,7 @@ namespace dsf_api_template_net6.Controllers
         /// <remarks>
         /// GET is used to request data from a specified resource.
         /// <br/>
-        /// This endpoint retrieves the contact information by the Identity retrived from the access token.
+        /// This endpoint retrieves the contact information by the Identity retrieved from the access token.
         /// </remarks>
         [Authorize]
         [HttpGet]
