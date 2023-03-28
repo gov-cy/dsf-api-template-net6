@@ -32,6 +32,15 @@ namespace dsf_api_template_net6.Filters
                     Schema = new OpenApiSchema { Type = "String" }
                 });
 
+                operation.Parameters.Add(new OpenApiParameter
+                {
+                    Name = "service-id",
+                    In = ParameterLocation.Header,
+                    Description = "Used to identify the service",
+                    Required = false,
+                    Schema = new OpenApiSchema { Type = "String" }
+                });
+
                 //operation.Parameters.Add(new OpenApiParameter
                 //{
                 //    Name = "service-id",
