@@ -27,7 +27,7 @@ This api is a demo implementation that contains the following:
 * Implementation of GET, POST, PUT, and DELETE endpoints for demostrating CRUD operations using temporary In-Memory storage.
 * Sample email and phone number validation endpoints (Validation Controller)
 * Implementation of a sample endpoint to return the claims of an IdentityServer access token (Identity Controller)
-* much more to come ...
+* Endpoint Versioning
 
 ## Integrations
 
