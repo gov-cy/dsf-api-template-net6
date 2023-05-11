@@ -1,8 +1,8 @@
-﻿using dsf_api_template_net6.Helpers;
-using dsf_api_template_net6.Models;
+﻿using DSF.AspNetCore.Api.Template.Helpers;
+using DSF.AspNetCore.Api.Template.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace dsf_api_template_net6.Controllers
+namespace DSF.AspNetCore.Api.Template.Controllers
 {
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiVersion("1.0")]

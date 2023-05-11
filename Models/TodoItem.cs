@@ -1,4 +1,4 @@
-﻿namespace dsf_api_template_net6.Models
+﻿namespace DSF.AspNetCore.Api.Template.Models
 {
     public class TodoItem
     {

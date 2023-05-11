@@ -1,5 +1,4 @@
-﻿
-namespace dsf_api_template_net6.Middleware
+﻿namespace DSF.AspNetCore.Api.Template.Middleware
 {
     public class ApiKeyValidators
     {

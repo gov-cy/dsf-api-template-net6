@@ -1,14 +1,12 @@
 using AspNetCoreRateLimit;
-using dsf_api_template_net6.Filters;
-using dsf_api_template_net6.Middleware;
+using DSF.AspNetCore.Api.Template.Filters;
+using DSF.AspNetCore.Api.Template.Middleware;
+using DSF.AspNetCore.Api.Template.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.OpenApi.Models;
-using System.Reflection;
-
 using Microsoft.EntityFrameworkCore;
-using dsf_api_template_net6.Models;
-using System.Reflection.Metadata;
+using Microsoft.OpenApi.Models;
 using System.Net;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -35,7 +33,7 @@ builder.Services.AddSwaggerGen(c =>
             Url = new Uri("https://dsf.dmrid.gov.cy/")
         },
     });
-
+    //todo: enable annotations
     c.OperationFilter<AddHeaderParameterOperationFilter>();
     //c.OperationFilter<SecurityRequirementsOperationFilter>();
     //c.SchemaFilter<EnumSchemaFilter>();
@@ -67,30 +65,24 @@ builder.Services.AddSwaggerGen(c =>
                 });
 });
 
-builder.Services.AddAuthentication("token")
-                .AddJwtBearer("token", options =>
-                {
-                    //options.Authority = "https://dsf-idsrv-dev.dmrid.gov.cy"; //Urls.CYLogin;
-                    options.Authority = builder.Configuration["IdentityServer:Authority"];
-                    options.TokenValidationParameters.ValidateAudience = false;
+builder.Services
+    .AddAuthentication("token")          
+    .AddJwtBearer("token", options =>
+    {
+        // base-address of Identity Server
+        options.Authority = builder.Configuration["IdentityServer:Authority"];
+        options.TokenValidationParameters.ValidateAudience = false;
 
-                    options.TokenValidationParameters.ValidTypes = new[] { "at+jwt", "JWT" }; // currently CYLogin token type is JWT                    
+        options.TokenValidationParameters.ValidTypes = new[] { "at+jwt", "JWT" }; // currently CYLogin token type is JWT                    
 
-                    if (Boolean.Parse(builder.Configuration["Proxy:ProxyEnabled"]))
-                    {
-                        options.BackchannelHttpHandler = new HttpClientHandler
-                        {
-                            Proxy = new WebProxy(builder.Configuration["Proxy:ProxyAddress"])
-                        };
-                    }
-                });
-
-// require the scope dsf.submission in the access token
-builder.Services.AddAuthorization(options =>
-{
-    options.AddPolicy("submission_access", policy =>
-        policy.RequireClaim("scope", "dsf.submission"));
-});
+        if (Boolean.Parse(builder.Configuration["Proxy:ProxyEnabled"]))
+        {
+            options.BackchannelHttpHandler = new HttpClientHandler
+            {
+                Proxy = new WebProxy(builder.Configuration["Proxy:ProxyAddress"])
+            };
+        }
+    });
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
