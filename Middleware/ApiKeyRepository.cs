@@ -18,7 +18,7 @@ namespace dsf_api_template_net6.Middleware
         {
             var apikeyList = _configuration.GetSection("ApiKeys:client-keys").Get<List<string>>();
 
-            if (apikeyList.Contains(reqkey))
+            if (apikeyList!.Contains(reqkey))
             {
                 return true;
             }
@@ -32,7 +32,7 @@ namespace dsf_api_template_net6.Middleware
         {
             var apikeyAuthList = _configuration.GetSection("ApiKeyAuthorizations:" + apiKey).Get<List<string>>();
 
-            if (apikeyAuthList.Contains("*"))
+            if (apikeyAuthList!.Contains("*"))
             {
                 return true;
             }
@@ -64,7 +64,7 @@ namespace dsf_api_template_net6.Middleware
         {
             var apiRestrictedKeyList = _configuration.GetSection("ApiKeys:restricted-keys").Get<List<string>>();
 
-            if (apiRestrictedKeyList.Contains(reqkey))
+            if (apiRestrictedKeyList!.Contains(reqkey))
             {
                 return true;
             }
@@ -78,7 +78,7 @@ namespace dsf_api_template_net6.Middleware
         {
             var apiRestrictedEndpointList = _configuration.GetSection("RestrictedEndpoints").Get<List<string>>();
             bool ret = false;
-            foreach (string s in apiRestrictedEndpointList)
+            foreach (string s in apiRestrictedEndpointList!)
             {
                 if (endpoint.Contains(s))
                 {

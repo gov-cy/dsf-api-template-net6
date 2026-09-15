@@ -1,4 +1,4 @@
-﻿using Microsoft.OpenApi.Models;
+﻿using Microsoft.OpenApi;
 using Swashbuckle.AspNetCore.Swagger;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
@@ -29,7 +29,7 @@ namespace dsf_api_template_net6.Filters
                     In = ParameterLocation.Header,
                     Description = "Used to authenticate/authorize the caller. In the format of a Pre-Shared API Key",
                     Required = false,
-                    Schema = new OpenApiSchema { Type = "String" }
+                    Schema = new OpenApiSchema { Type = JsonSchemaType.String }
                 });
 
                 operation.Parameters.Add(new OpenApiParameter
@@ -38,7 +38,7 @@ namespace dsf_api_template_net6.Filters
                     In = ParameterLocation.Header,
                     Description = "Used to identify the service",
                     Required = false,
-                    Schema = new OpenApiSchema { Type = "String" }
+                    Schema = new OpenApiSchema { Type = JsonSchemaType.String }
                 });
 
                 //operation.Parameters.Add(new OpenApiParameter

@@ -2,13 +2,14 @@ using AspNetCoreRateLimit;
 using dsf_api_template_net6.Filters;
 using dsf_api_template_net6.Middleware;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.OpenApi.Models;
+//using Microsoft.OpenApi.Models;
 using System.Reflection;
 
 using Microsoft.EntityFrameworkCore;
 using dsf_api_template_net6.Models;
 using System.Reflection.Metadata;
 using System.Net;
+using Microsoft.OpenApi;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -54,17 +55,22 @@ builder.Services.AddSwaggerGen(c =>
         Description = "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 1safsfsdfdfd\"",
     });
 
-    c.AddSecurityRequirement(new OpenApiSecurityRequirement {
-                    {
-                        new OpenApiSecurityScheme {
-                            Reference = new OpenApiReference {
-                                Type = ReferenceType.SecurityScheme,
-                                    Id = "Bearer"
-                            }
-                        },
-                        new string[] {}
-                    }
-                });
+    //c.AddSecurityRequirement(new OpenApiSecurityRequirement {
+    //                {
+    //                    new OpenApiSecurityScheme {                            
+    //                        Reference = new OpenApiReference {
+    //                            Type = ReferenceType.SecurityScheme,
+    //                                Id = "Bearer"
+    //                        }
+    //                    },
+    //                    new string[] {}
+    //                }
+    //            });
+
+    c.AddSecurityRequirement(document => new OpenApiSecurityRequirement
+    {
+        [new OpenApiSecuritySchemeReference("Bearer", document)] = []
+    });
 });
 
 builder.Services.AddAuthentication("token")
@@ -76,11 +82,11 @@ builder.Services.AddAuthentication("token")
 
                     options.TokenValidationParameters.ValidTypes = new[] { "at+jwt", "JWT" }; // currently CYLogin token type is JWT                    
 
-                    if (Boolean.Parse(builder.Configuration["Proxy:ProxyEnabled"]))
+                    if (Boolean.Parse(builder.Configuration["Proxy:ProxyEnabled"]!))
                     {
                         options.BackchannelHttpHandler = new HttpClientHandler
                         {
-                            Proxy = new WebProxy(builder.Configuration["Proxy:ProxyAddress"])
+                            Proxy = new WebProxy(builder.Configuration["Proxy:ProxyAddress"]!)
                         };
                     }
                 });
