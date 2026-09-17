@@ -47,8 +47,8 @@ namespace DsfWebApi.Controllers
 
             try
             {
-                string clientKey = HttpContext.Request.Headers["client-key"];
-                string serviceId = HttpContext.Request.Headers["service-id"];
+                string clientKey = HttpContext.Request.Headers["client-key"]!;
+                string serviceId = HttpContext.Request.Headers["service-id"]!;
 
                 if (!string.IsNullOrEmpty(serviceId))
                 {
@@ -110,13 +110,13 @@ namespace DsfWebApi.Controllers
             {
                 try
                 {
-                    unique_identifier = identity.FindFirst("unique_identifier").Value;
+                    unique_identifier = identity.FindFirst("unique_identifier")!.Value;
                     hashedId = dsf_api_template_net6.Helpers.Encryption.SHA256(unique_identifier);
                 }
                 catch (Exception ex)
                 {
                     response.ErrorCode = 401;
-                    response.ErrorMessage = "Unauthorized: No identity found";
+                    response.ErrorMessage = "Unauthorized: No identity found" + ex.Message;
 
                     return response;
                 }
@@ -131,8 +131,8 @@ namespace DsfWebApi.Controllers
 
             try
             {
-                string clientKey = HttpContext.Request.Headers["client-key"];
-                string serviceId = HttpContext.Request.Headers["service-id"];
+                string clientKey = HttpContext.Request.Headers["client-key"]!;
+                string serviceId = HttpContext.Request.Headers["service-id"]!;
 
                 if (!string.IsNullOrEmpty(serviceId))
                 {

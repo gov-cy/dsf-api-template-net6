@@ -40,7 +40,7 @@ namespace dsf_api_template_net6.Middleware
             }
             else
             {
-                if (!ApiKeyRepo.CheckValidApiKey(context.Request.Headers["client-key"]))
+                if (!ApiKeyRepo.CheckValidApiKey(context.Request.Headers["client-key"]!))
                 {
                     context.Response.StatusCode = 401; //UnAuthorized
                     await context.Response.WriteAsync("Invalid API Key");
@@ -50,8 +50,8 @@ namespace dsf_api_template_net6.Middleware
                 if (context.Request.Path.HasValue)
                 {
                     if (!ApiKeyRepo.CheckValidApiKeyAuthorization(
-                            context.Request.Headers["client-key"], 
-                            context.Request.Path.Value))
+                            context.Request.Headers["client-key"]!, 
+                            context.Request.Path.Value!))
                     {
                         context.Response.StatusCode = 401; //UnAuthorized
                         await context.Response.WriteAsync("Unauthorized API Key");
